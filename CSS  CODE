@@ -1,0 +1,137 @@
+/* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font: 1.2em/1.4 Arial, Helvetica, sans-serif;
+}
+
+body {
+    padding: 0 0 1em;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    border: 5px solid #000;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em 1em;
+    border-top: 1px solid #999;
+}
+
+header .title {
+    font-size: 150%;
+    font-style: italic;
+    font-weight: bold;
+    padding: 1em;
+}
+
+main {
+    padding: 0 1em;
+}
+
+.cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards li {
+    border: 5px solid #000;
+    margin-bottom: 1em;
+    flex: 1;
+    max-width: 30%;
+}
+
+.cards h2 {
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 0.5em 1em;
+}
+
+.cards .inner {
+    padding: 0.5em 1em;
+}
+
+.sidebar {
+    background-color: #333;
+    border: 5px solid #000;
+    padding: 0.5em 1em;
+    color: #fff;
+}
+
+/* Responsive Stuff Here! */
+
+/* Media query for desktop layout */
+@media screen and (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header ul {
+        display: flex;
+    }
+
+    header .title {
+        font-size: 200%;
+        padding: 0.5em;
+    }
+
+    .cards li {
+        max-width: 45%;
+    }
+
+    .cards .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .cards .cards-container > li {
+        width: 50%;
+    }
+
+    .sidebar {
+        max-width: 120%;
+        margin-left: 2em;
+    }
+
+    /* New styles for the desired layout */
+    .cards .cards-container {
+        flex-wrap: wrap; /* Change flex-wrap to wrap to allow cards to wrap to the next row */
+    }
+
+    .cards .cards-container > li:nth-child(4),
+    .cards .cards-container > li:nth-child(5) {
+        flex: 1; /* Allow cards 4 and 5 to take full width of the container */
+        max-width: 45%; /* Set max-width to 45% to control the width of cards 4 and 5 */
+    }
+
+    .sidebar {
+        flex: 1; /* Allow the sidebar to take full width of the container */
+        margin-left: 1em; /* Add some margin to the sidebar */
+    }
+
+    /* Add some space between cards */
+    .cards li {
+        margin-right: 1em; /* Add margin between cards */
+    }
+}
